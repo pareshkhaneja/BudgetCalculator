@@ -77,6 +77,14 @@ elif choice == 4:                               #Abstract Function to create a n
         conn.commit()
         print('Table for %s has been created' %(month))
 
+elif choice == 5:
+    month_num = input("Enter name of month or number")
+    month = getMonthName(month_num)
+    try:
+        curs.execute('DROP TABLE IF EXISTS '+month)
+        conn.commit()
+    except OperationalError as drop_error:
+        print(drop_error.args[0])
 elif choice == 6:
         exit()
 
