@@ -14,7 +14,7 @@ def Create_Table(month_num):
         month = getMonthName(month_num)
 
         Month_DB = """CREATE TABLE IF NOT EXISTS %s
-                        (ID                     integer         PRIMARY KEY,
+                        (ID             integer         PRIMARY KEY,
                         date_text       integer         NOT NULL,
                         Balance         integer         NOT NULL,
                         Break_Fast      integer         NULL,
