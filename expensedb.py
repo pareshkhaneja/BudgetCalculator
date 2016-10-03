@@ -95,3 +95,5 @@ while (True):
 
     else:
             print("Your choice "+choice+" is not an option, please try again...")
+#Close the database connection
+conn.close()
