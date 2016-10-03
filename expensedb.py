@@ -36,7 +36,7 @@ def Create_Table(month_num):
 
         return Month_DB
 
-print('Welcome to your daily Budget Planner')
+print("Welcome to your daily Budget Planner")
 conn=connect('expense.db')
 curs=conn.cursor()
 while (True):
@@ -50,7 +50,7 @@ while (True):
     choice = int(input("Enter your choice(1-6): "))
 
     if choice == 1:
-            month_num = input("Enter the month you want the data of (name or number) ?")
+            month_num = input("Enter the month you want the data of (name or number) : ")
             month = getMonthName(month_num)
 
             try:
@@ -61,8 +61,8 @@ while (True):
             except OperationalError as e:
                     print(e.args[0])
 
-    elif choice == 2:                               #Abstract Fumction to add an Entry
-            month_num = input("Enter the month you want to add data of (name or number) ?")
+    elif choice == 2:
+            month_num = input("Enter the month you want to add data of (name or number) : ")
             month = getMonthName(month_num)
             try:
                 balance = input("Enter balance")
@@ -79,7 +79,7 @@ while (True):
             month_sql = Create_Table(month_num)
             curs.execute(month_sql)
             conn.commit()
-            print('Table for %s has been created' %(month))
+            print("Table for %s has been created" %(month))
 
     elif choice == 5:
         month_num = input("Enter name of month or number")
@@ -91,7 +91,7 @@ while (True):
             print(drop_error.args[0])
 
     elif choice == 6:
-            break
+            exit()
 
     else:
             print("Your choice "+choice+" is not an option, please try again...")
