@@ -91,7 +91,7 @@ while (True):
             print(drop_error.args[0])
 
     elif choice == 6:
-            exit()
+            break
 
     else:
             print("Your choice "+choice+" is not an option, please try again...")
