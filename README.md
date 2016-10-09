@@ -6,7 +6,6 @@ A Simple Expense Analyser/Budget Calculator.
 - Calendar
 
 ####TODO
-- Validation while creating table in Database is pending.
-- Handling sqlite_master is pending.
 - Need to come up with Table Deletion and Entry Deletion Functions.
+- Handle all the elements while inserting into tables.
 
