@@ -1,4 +1,4 @@
-# BudgetCalculator
+# Expense Analyzer
 A Simple Expense Analyser/Budget Calculator. 
 
 ####Dependencies:
