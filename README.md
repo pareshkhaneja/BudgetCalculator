@@ -6,6 +6,6 @@ A Simple Expense Analyser/Budget Calculator.
 - Calendar
 
 ####TODO
-- Need to come up with Table Deletion and Entry Deletion Functions.
+- Need to come up with Entry Deletion Functions. 
 - Handle all the elements while inserting into tables.
 
