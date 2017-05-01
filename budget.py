@@ -49,9 +49,7 @@ while (True):
                                 elif data== '6':
                                         Others_input = input('Tell me Other expense? : ')
                                         insertquery(month,Balance,today,Balance_input)
-
-                                #curs.execute('''INSERT INTO %s (?, date_text) VALUES (?,?)'''%month, balance, today)
-                                #NOT NULL constraint failed. month.Total
+					
                                 conn.commit()
                         except IntegrityError as integ_error:
                                    print(integ_error)
