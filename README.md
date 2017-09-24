@@ -1,7 +1,6 @@
-# Expense Analyzer
-A Simple Expense Analyser/Budget Calculator. 
-
-####Dependencies:
+# Expense Tracker
+A Simple Expense Tracker.
+Dependencies:
 - SQLite3
 - Calendar
 
