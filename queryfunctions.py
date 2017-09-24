@@ -1,8 +1,7 @@
-#!/usr/bin/python
 
 from sqlite3 import connect
 from sqlite3 import OperationalError, IntegrityError
-
+from datetime import datetime
 from calendar import month_name
 
 conn=connect('expensedb')
@@ -60,9 +59,10 @@ def deltable(month):
 def createtable(month):
 
 	curs.execute('''CREATE TABLE IF NOT EXISTS %s
-		(ID                             integer                 PRIMARY KEY,
-		date_text               integer                 NOT NULL,
-		Balance                 integer                 NOT NULL,
+		(ID                     integer                 PRIMARY KEY AUTOINCREMENT,
+		Created					text				 	NOT NULL,
+		Last Updated            text                 	NULL,
+		Balance                 integer                 NULL,
 		Break_Fast              integer                 NULL,
 		Lunch                   integer                 NULL,
 		Dinner                  integer                 NULL,
@@ -74,5 +74,9 @@ def createtable(month):
 		#month_sql = Create_Table(month)
 	conn.commit()
 	print("Table for %s has been created" %(month))
-
-
+	
+def insertquery(Balance='None', Break_Fast='None', Lunch='None', Dinner='None', Travel='None', Others='None', Total='None'):
+	month='September'
+	date=datetime.today()	#Last Updated Date
+	curs.execute("INSERT INTO {} (Created, Balance, Break_Fast, Lunch, Dinner, Travel, Others, Total) VALUES(?, ?, ?, ?, ?, ?, ?, ?)".format(month), (date, Balance, Break_Fast, Lunch, Dinner, Travel, Others, Total))
+	conn.commit()
